@@ -1,0 +1,38 @@
+
+#search {
+    width: 100%;
+}
+#search-recipes {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    margin-top: 190px;
+    margin-bottom: 130px;
+    justify-content: center;
+}
+#search-recipes-input {
+    border: 2px solid black;
+    font-size: 36px;
+    width: 80%;
+    padding: 5px 10px;
+    transition: 0.5s;
+}
+#search-recipes-input:focus {
+    outline: none;
+}
+#recipes {
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+    justify-content: left;
+    gap: 10px;
+}
+.recipe img {
+    width: 390px;
+    height: 520px;
+    object-fit: cover;
+}

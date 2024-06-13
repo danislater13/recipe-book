@@ -1,0 +1,49 @@
+#menu {
+    display: flex;
+    background-color: rgba(209, 44, 44, 0.692);
+    box-shadow: 0px 0px 2px 1px rgba(65, 65, 65, 0.719);
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+    width: 100%;
+}
+#content {
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    width: 100%;
+    background-color: rgb(250, 179, 179);
+}
+.menu-buttons {
+    margin: 10px;
+    position: absolute;
+    left: 800px;
+    display: flex;
+}
+.menu-buttons-button {
+    padding: 0px 20px;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.menu-buttons-button:hover {
+    color: white;
+}
+.bottom-mode {
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+}
+.bottom-mode-icon {
+    width: 25px;
+    height: 25px;
+}
+.dark-mode {
+    background-color: black;
+    transition: 0.3s;
+}
+.light-mode {
+    background-color: rgb(221, 221, 221);
+    transition: 0.3s;
+}
