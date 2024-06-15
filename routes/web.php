@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RecipeController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/recipes', function () {
 //     return view('front-page');
 // });
-// Route::resource('/recipes',[]);
+Route::resource('/recipes', RecipeController::class);
 
 //Search recipes---------------------------------
 // Route::get('/search' . [User::class, 'search']);
