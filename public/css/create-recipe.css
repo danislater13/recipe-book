@@ -82,9 +82,7 @@
     object-fit: cover;
     border-radius: 4px;
 }
-#recipe-form-top-right {
-    /* width: 350px;s */
-}
+
 input,
 textarea {
     outline: none;
@@ -93,11 +91,15 @@ textarea {
     padding: 5px;
     box-sizing: border-box;
 }
+#recipe-form-top-right {
+    position: relative;
+}
 .recipe-form-top-right-name {
     font-size: 26px;
     width: 350px;
 }
 #recipe-form-top-right-under {
+    /* position: relative; */
     margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +117,7 @@ textarea {
 }
 #recipe-form-top-right-under #ingredients-block {
     margin-top: 20px;
-    display: block;
+    display: grid;
 }
 #recipe-form-top-right-under #ingredients-block label {
     width: 100%;
@@ -163,4 +165,20 @@ textarea {
 }
 label {
     font-weight: 500;
+}
+.error {
+    color: rgb(255, 69, 69);
+    font-family: italic;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.error.ingredients,
+.error.preptime {
+    position: absolute;
+    left: 120px;
+}
+.error.name {
+    position: absolute;
+    top: 25px;
+    right: 40px;
 }

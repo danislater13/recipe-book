@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    document.getElementById('image1').addEventListener('change', function () {
+    document.getElementById('image').addEventListener('change', function () {
         previewImage(this, 'preview1');
     });
 });
