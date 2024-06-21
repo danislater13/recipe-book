@@ -5,13 +5,6 @@
 @endsection
 
 @section('content')
-{{-- <script>
-    // const notyf = new Notyf();
-    // notyf.error('Please fill out the form');
-    @if(session('success'))
-        notyf.success('{{ session('success') }}');
-    @endif
-</script> --}}
 <div id="container">
     <form id="recipe-form" action="{{route('recipes.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -65,7 +58,6 @@
         <button type="submit" id="create-recipe">Create Recipe</button>
     </form>
 </div>
-
 @endsection
 
 @section('scripts')
