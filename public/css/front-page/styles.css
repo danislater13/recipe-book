@@ -1,10 +1,11 @@
 #search-recipes {
     position: relative;
-    width: 70%;
-    display: flex;
-    align-items: center;
-    background-color: rgb(253, 245, 235);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
+    width: 70%;
+    height: 215px;
+    display: flex;
+    flex-wrap: wrap;
     border: 2px solid rgba(184, 184, 184, 0.438);
     padding: 30px 30px;
     margin: 100px auto;
@@ -12,17 +13,27 @@
 #search-recipes .form-group {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: 30%;
 }
 #search-recipes .form-group label {
     width: 100%;
     font-family: calibri;
     font-weight: 600;
 }
-#search-recipes .form-group #search {
-    width: 600px;
+#search-recipes #search {
+    width: 100%;
+    font-size: 30px;
+    text-transform: uppercase;
+    outline: none;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    margin-right: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.247);
+    border-radius: 1px;
 }
-#search-recipes .form-group input {
+#search-recipes .form-group input,
+#search-recipes .form-group select {
+    width: 200px;
     outline: none;
     margin: 10px 0px;
     padding: 5px;
@@ -33,30 +44,43 @@
 #search-recipes .form-group input:focus {
     border: 2px solid rgba(0, 0, 0, 0.712);
 }
+#buttons {
+    margin-top: 35px;
+}
 #search-recipes #search-button {
-    position: absolute;
-    right: 130px;
     background-color: green;
     border: none;
     border-radius: 2px;
     color: white;
     width: 80px;
-    margin-top: 22px;
     height: 38px;
 }
 #search-recipes #search-button:hover {
     background-color: rgb(1, 107, 1);
 }
+#delete-filters {
+    text-decoration: none;
+    border-radius: 2px;
+    padding: 8.5px 13px;
+    color: white;
+    background-color: rgb(255, 41, 41);
+}
+#delete-filters:hover {
+    background-color: rgb(197, 0, 0);
+}
+#delete-filters svg {
+    margin-right: 5px;
+}
 #recipes {
-    width: 1200px;
+    width: 1215px;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
     margin-top: 10px;
-    margin-left: 5px;
+    /* margin-left: 5px; */
     margin-bottom: 30px;
     justify-content: left;
-    gap: 10px;
+    gap: 5px;
 }
 .recipe img {
     width: 390px;
@@ -64,10 +88,113 @@
     object-fit: cover;
 }
 #new-recipe {
-    position: absolute;
-    right: 70px;
+    text-decoration: none;
     background-color: rgb(241, 104, 24);
     margin-top: 21px;
-    padding: 7px 15px;
+    padding: 8.5px 15px;
     color: white;
+}
+#new-recipe svg {
+    margin-right: 5px;
+}
+/* Contenedor de paginación */
+.pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+/* Estilo de los elementos de la paginación */
+.pagination li {
+    margin: 0.5px;
+}
+
+/* Estilo de los enlaces de la paginación */
+.pagination li a,
+.pagination li span {
+    font-size: 20px;
+    display: block;
+    padding: 10px 20px;
+    color: #000000;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Estilo de los enlaces al pasar el mouse */
+.pagination li a:hover {
+    color: #fff;
+    background-color: rgb(235, 172, 95);
+    border-color: rgb(235, 172, 95);
+}
+
+/* Estilo para la página activa */
+.pagination li.active span {
+    color: #fff;
+    background-color: #e07f00;
+    border-color: #e07f00;
+}
+
+/* Estilo para los botones deshabilitados */
+.pagination li.disabled span {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.recipe {
+    position: relative;
+    width: 300px;
+    border: 1px solid #ccc; /* Añadir borde para mejor visualización */
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe img {
+    width: 100%;
+    height: 300px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.info-top.name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info-mid {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+.info-mid .preptime {
+    margin: 5px 0;
+    width: 50%;
+}
+.info-mid .view-recipe {
+    padding: 5px 10px;
+    /* height: 20px; */
+    text-decoration: none;
+    color: white;
+    background-color: #ec6206;
+}
+.info-mid .view-recipe:hover {
+    background-color: #e07f00;
+}
+.created-at {
+    width: 100%;
+    background-color: #ffffff93;
+    position: absolute;
+    padding-left: 10px;
+    font-weight: 600;
+    /* left: 10px;s */
 }
