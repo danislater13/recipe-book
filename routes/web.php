@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/recipes', function () {
-//     return view('front-page');
-// });
-// Route::resource('/recipes', RecipeController::class);
+Route::get('/', function () {
+    return redirect('/recipes');
+});
 Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
 Route::get('/recipes/new-recipe', [RecipeController::class, 'create'])->name('recipes.create');
 Route::post('/recipes/store', [RecipeController::class, 'store'])->name('recipes.store');
-//For filters in recipes
-// Route::post('/recipes', [RecipeController::class, 'index']);
-//Search recipes---------------------------------
-// Route::get('/search' . [User::class, 'search']);
+Route::get('recipe/{recipe}/{recipename}', [RecipeController::class, 'show'])->name('recipe.show');
+// Route::put('recipe/{recipe}/update', [RecipeController::class, 'update'])->name('recipe.update');
+Route::post('recipe/update/{recipe}', [RecipeController::class, 'update'])->name('recipe.update');
+
+
+Route::get('/PDF/{recipe}', [RecipeController::class, 'pdf'])->name('recipe.pdf');

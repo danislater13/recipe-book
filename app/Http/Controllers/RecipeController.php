@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recipe;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Exception;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -93,7 +94,8 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        //
+        //Show update page
+        return view('recipe-update', ['recipe' => $recipe]);
     }
 
     /**
@@ -109,7 +111,42 @@ class RecipeController extends Controller
      */
     public function update(Request $request, Recipe $recipe)
     {
-        //
+        // dd('recipe entra');
+        //image,name,prep-time,ingredients,description
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'name' => 'required|string|max:255',
+            'preptime' => 'required|integer|min:1',
+            'ingredients' => 'required|string',
+            'description' => 'nullable|string',
+        ]);
+
+        try {
+
+            //save variables
+            // $recipe = new Recipe();
+            $recipe->name = $request->name;
+            $recipe->preptime = $request->preptime;
+            $recipe->ingredients = $request->ingredients;
+
+            if ($request->has('description')) {
+                $recipe->description = $request->description;
+            }
+
+            $recipe->save();
+            $image = $request->file('image');
+            if ($image) {
+                $image_name = $recipe->id . "-" . $recipe->name . "." . $request->file('image')->getClientOriginalExtension();
+                $recipe->img = $image_name;
+                $recipe->save();
+                $image->storeAs('/recipes', $image_name, 'img');
+            }
+            toastr()->success('Recipe Updated', $recipe->name);
+            return redirect()->back();
+        } catch (Exception $e) {
+            // dd($e->getMessage());
+            dd(['errorCode' => $e->getCode(), 'message' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -118,5 +155,11 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         //
+    }
+    public function pdf(Recipe $recipe)
+    {
+        // dd('entra en pdf');
+        $pdf = PDF::loadView('pdf.recipe', compact('recipe'));
+        return $pdf->stream('recipe.pdf');
     }
 }

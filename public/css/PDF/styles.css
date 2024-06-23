@@ -1,0 +1,59 @@
+html,
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(253, 241, 226);
+}
+hr {
+    width: 90%;
+    background-color: rgb(252, 207, 153);
+    border-color: rgb(252, 207, 153);
+}
+.top {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.image {
+    margin: 30px 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid rgb(255, 192, 115);
+    width: 500px;
+    height: 500px; /* 3/8 to maintain a 3:4 aspect ratio */
+    object-fit: cover;
+}
+.name {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+label {
+    padding-top: 40px;
+}
+.preptime,
+.ingredients {
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.bot-info {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgb(221, 221, 221);
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 250, 243);
+}
+.description {
+    font-size: 15px;
+    line-height: 1.2;
+}
