@@ -198,3 +198,18 @@
     font-weight: 600;
     /* left: 10px;s */
 }
+.pdf-button {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    background-color: red;
+    padding: 7px;
+    transition: 0.3s;
+}
+.pdf-button:hover {
+    border-radius: 5px;
+    background-color: rgb(206, 2, 2);
+}

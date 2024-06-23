@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // addIngredients();
     function previewImage(input, previewElementId) {
         var file = input.files[0];
         if (file) {

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('img')->nullable();
             $table->string('name');
             $table->integer('preptime');
-            $table->string('ingredients');
-            $table->string('description')->nullable();
+            $table->text('ingredients');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

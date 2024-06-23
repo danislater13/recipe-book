@@ -43,7 +43,8 @@
                         </div>
                         <div class="info-mid">
                             <div class="preptime"><strong><i class="fa-regular fa-clock"></i></strong> {{$recipe->preptime}} min  </div>
-                            <a href="#" class="view-recipe">View Recipe</a>
+                            <a href="{{route('recipe.show',['recipe'=>$recipe->id,'recipename'=>$recipe->name])}}" class="view-recipe">View Recipe</a>
+                            <a href="{{route('recipe.pdf',$recipe->id)}}" class="pdf-button"><i class="fa-solid fa-file-pdf fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
